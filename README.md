@@ -10,7 +10,7 @@
 > ✔ [Skript](https://www.spigotmc.org/resources/skript.114544/) - Anbefalet 
 
 ### 📦 Staff Kits  
-**/staffKits** - for at få kits
+> **/staffKits** - for at få kits
 
 **Indeholder:**  
 - **`🪓 wood_axe`**
