@@ -10,25 +10,25 @@
 > ✔ [Skript](https://www.spigotmc.org/resources/skript.114544/) - Anbefalet 
 
 ### 📦 Staff Kits  
-> **/staffKits** - for at få kits
+**/staffKits** - for at få kits
 
 **Indeholder:**  
-> - **`🪓 wood_axe`**
-> - **`🚫 barrier`**  
-> - **`💡 light`**  
-> - **`🦴 bone`**  
+- **`🪓 wood_axe`**
+- **`🚫 barrier`**  
+- **`💡 light`**  
+- **`🦴 bone`**  
 
 ### 📋 Staff Menu  
-> **/staff** - Åbner hovedmenuen  
+**/staff** - Åbner hovedmenuen  
 
-> **/staffinfo** - Viser staff-information  
+**/staffinfo** - Viser staff-information  
 
-> **/staffOnline** - Viser online staff  
+**/staffOnline** - Viser online staff  
 
 #### 🔹 Staff Online Commands  
-> **/staffOnline add <spiller>** - Tilføjer en spiller til staff-listen 
+**/staffOnline add <spiller>** - Tilføjer en spiller til staff-listen 
  
-> **/staffOnline remove <spiller>** - Fjerner en spiller fra staff-listen  
+**/staffOnline remove <spiller>** - Fjerner en spiller fra staff-listen  
 
 ### 📥 Installation  
 1. Sørg for, at **Skript** er installeret.  
