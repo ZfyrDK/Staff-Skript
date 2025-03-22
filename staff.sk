@@ -5,6 +5,180 @@
 #  - Staff kit med cooldown
 # ==============================
 
-# ==============================
-#  - er ved at blive fikset
-# ==============================
+command /staff:
+    trigger:
+        set {_gui} to a new chest inventory with 5 rows named "&4&lStaff &f&lMove"
+        set slot 0 of {_gui} to Red Stained Glass Pane named "&4&l(!) ikke (!)"
+        set slot 1 of {_gui} to Red Stained Glass Pane named "&4&l(!) ikke (!)"
+        set slot 2 of {_gui} to Red Stained Glass Pane named "&4&l(!) ikke (!)"
+        set slot 3 of {_gui} to Red Stained Glass Pane named "&4&l(!) ikke (!)"
+        set slot 5 of {_gui} to Red Stained Glass Pane named "&4&l(!) ikke (!)"
+        set slot 6 of {_gui} to Red Stained Glass Pane named "&4&l(!) ikke (!)"
+        set slot 7 of {_gui} to Red Stained Glass Pane named "&4&l(!) ikke (!)"
+        set slot 8 of {_gui} to Red Stained Glass Pane named "&4&l(!) ikke (!)"
+        set slot 36 of {_gui} to Red Stained Glass Pane named "&4&l(!) ikke (!)"
+        set slot 37 of {_gui} to Red Stained Glass Pane named "&4&l(!) ikke (!)"
+        set slot 38 of {_gui} to Red Stained Glass Pane named "&4&l(!) ikke (!)"
+        set slot 39 of {_gui} to Red Stained Glass Pane named "&4&l(!) ikke (!)"
+        set slot 41 of {_gui} to Red Stained Glass Pane named "&4&l(!) ikke (!)"
+        set slot 42 of {_gui} to Red Stained Glass Pane named "&4&l(!) ikke (!)"
+        set slot 43 of {_gui} to Red Stained Glass Pane named "&4&l(!) ikke (!)"
+        set slot 44 of {_gui} to Red Stained Glass Pane named "&4&l(!) ikke (!)"
+        set slot 40 of {_gui} to barrier named "&cLuk menu" with lore "&7Klik for at lukke."
+        set slot 4 of {_gui} to nether star named "&dDiscord" with lore "&7Join vores Discord!"
+
+        set slot 19 of {_gui} to Wooden axe named "&4&lStaff &f&lTool" with lore ""
+        set slot 22 of {_gui} to Lectern named "&4&lStaff &f&lInfo" with lore ""
+        set slot 25 of {_gui} to player head named "&4&lStaff &f&lOnline" with lore ""
+        open {_gui} to player
+
+command /staffinfo:
+    trigger:
+        set {_gui} to a new chest inventory with 5 rows named "&4&lStaff &f&lInfo"
+        set slot 0 of {_gui} to Red Stained Glass Pane named "&4&l(!) ikke (!)"
+        set slot 1 of {_gui} to Red Stained Glass Pane named "&4&l(!) ikke (!)"
+        set slot 2 of {_gui} to Red Stained Glass Pane named "&4&l(!) ikke (!)"
+        set slot 3 of {_gui} to Red Stained Glass Pane named "&4&l(!) ikke (!)"
+        set slot 5 of {_gui} to Red Stained Glass Pane named "&4&l(!) ikke (!)"
+        set slot 6 of {_gui} to Red Stained Glass Pane named "&4&l(!) ikke (!)"
+        set slot 7 of {_gui} to Red Stained Glass Pane named "&4&l(!) ikke (!)"
+        set slot 8 of {_gui} to Red Stained Glass Pane named "&4&l(!) ikke (!)"
+        set slot 36 of {_gui} to Red Stained Glass Pane named "&4&l(!) ikke (!)"
+        set slot 37 of {_gui} to Red Stained Glass Pane named "&4&l(!) ikke (!)"
+        set slot 38 of {_gui} to Red Stained Glass Pane named "&4&l(!) ikke (!)"
+        set slot 39 of {_gui} to Red Stained Glass Pane named "&4&l(!) ikke (!)"
+        set slot 41 of {_gui} to Red Stained Glass Pane named "&4&l(!) ikke (!)"
+        set slot 42 of {_gui} to Red Stained Glass Pane named "&4&l(!) ikke (!)"
+        set slot 43 of {_gui} to Red Stained Glass Pane named "&4&l(!) ikke (!)"
+        set slot 44 of {_gui} to Red Stained Glass Pane named "&4&l(!) ikke (!)"
+        set slot 40 of {_gui} to barrier named "&eTilbage" with lore "&7Gå tilbage til forrige menu."
+        set slot 4 of {_gui} to nether star named "&dDiscord" with lore "&7Join vores Discord!"
+
+        set slot 19 of {_gui} to enchanted book named "" with lore ""
+        set slot 20 of {_gui} to enchanted book named "" with lore ""
+        set slot 22 of {_gui} to enchanted book named "" with lore ""
+        set slot 24 of {_gui} to enchanted book named "" with lore ""
+        set slot 25 of {_gui} to enchanted book named "" with lore ""
+        open {_gui} to player
+
+command /staffOnline [<text>] [<player>]:
+    trigger:
+        if arg-1 is "add":
+            if arg-2 is set:
+                if arg-2 is in {staff.list::*}:
+                    send "&c%arg-2% er allerede i Staff-menuen!" to player
+                else:
+                    add arg-2 to {staff.list::*}
+                    send "&a%arg-2% blev føjet til Staff-menuen." to player
+            else:
+                send "&cBrug: /staffOnline add <spiller>" to player
+
+        else if arg-1 is "remove":
+            if arg-2 is set:
+                if arg-2 is in {staff.list::*}:
+                    remove arg-2 from {staff.list::*}
+                    send "&a%arg-2% blev fjernet fra Staff-menuen." to player
+                else:
+                    send "&c%arg-2% er ikke i Staff-menuen!" to player
+            else:
+                send "&cBrug: /staffOnline remove <spiller>" to player
+        else:
+            set {_gui} to a new chest inventory with 5 rows named "&4&lStaff &f&lOnline"
+            set slot 0 of {_gui} to Red Stained Glass Pane named "&4&l(!) ikke (!)"
+            set slot 1 of {_gui} to Red Stained Glass Pane named "&4&l(!) ikke (!)"
+            set slot 2 of {_gui} to Red Stained Glass Pane named "&4&l(!) ikke (!)"
+            set slot 3 of {_gui} to Red Stained Glass Pane named "&4&l(!) ikke (!)"
+            set slot 5 of {_gui} to Red Stained Glass Pane named "&4&l(!) ikke (!)"
+            set slot 6 of {_gui} to Red Stained Glass Pane named "&4&l(!) ikke (!)"
+            set slot 7 of {_gui} to Red Stained Glass Pane named "&4&l(!) ikke (!)"
+            set slot 8 of {_gui} to Red Stained Glass Pane named "&4&l(!) ikke (!)"
+            set slot 36 of {_gui} to Red Stained Glass Pane named "&4&l(!) ikke (!)"
+            set slot 37 of {_gui} to Red Stained Glass Pane named "&4&l(!) ikke (!)"
+            set slot 38 of {_gui} to Red Stained Glass Pane named "&4&l(!) ikke (!)"
+            set slot 39 of {_gui} to Red Stained Glass Pane named "&4&l(!) ikke (!)"
+            set slot 41 of {_gui} to Red Stained Glass Pane named "&4&l(!) ikke (!)"
+            set slot 42 of {_gui} to Red Stained Glass Pane named "&4&l(!) ikke (!)"
+            set slot 43 of {_gui} to Red Stained Glass Pane named "&4&l(!) ikke (!)"
+            set slot 44 of {_gui} to Red Stained Glass Pane named "&4&l(!) ikke (!)"
+            set slot 40 of {_gui} to barrier named "&eTilbage" with lore "&7Gå tilbage til forrige menu."
+            set slot 4 of {_gui} to nether star named "&dDiscord" with lore "&7Join vores Discord!"
+
+            set {_slot} to 9
+            loop {staff.list::*}:
+                set {_player} to loop-value
+# Hent spillerens rank (kræver LuckPerms eller lignende plugin)
+                set {_rank} to prefix of {_player}
+                if {_player} is online:
+                    set {_color} to "&a&l"
+                    set {_status} to "Online"
+                else:
+                    set {_color} to "&4&l"
+                    set {_status} to "Offline"
+# Skab en hoved-item med rank i navnet
+                set {_head} to skull of {_player} named "&F&L%{_player}% &R%{_rank}%" with lore "&7Status: %{_color}%%{_status}%"
+                set slot {_slot} of {_gui} to {_head}
+                add 1 to {_slot}
+            open {_gui} to player
+
+on inventory click:
+    if name of event-inventory is "&cStaff Online":
+        cancel event
+        if clicked slot is 40:
+            execute player command "/staff"
+        else:
+            if event-item is not set:
+                stop
+            set {_clicked} to display name of event-item
+            replace all "&a" in {_clicked} with ""
+            if {_clicked} is set:
+                send "&aDu har valgt at kontakte &e%{_clicked}%!" to player
+                send "&e%player% har brug for hjælp!" to {_clicked}
+
+on inventory click:
+    if name of event-inventory is "&4&lStaff &f&lMove":
+        cancel event
+        if clicked slot is 19:
+            execute player command "/kitstaff"
+        if clicked slot is 22:
+            execute player command "/staffinfo"
+        if clicked slot is 4:
+            execute player command "/Discord"
+        if clicked slot is 25:
+            execute player command "/staffOnline"
+        if clicked slot is 40:
+            close player's inventory
+
+on inventory click:
+    if name of event-inventory is "&4&lStaff &f&lOnline":
+        cancel event
+        if clicked slot is 4:
+            execute player command "/Discord"
+        if clicked slot is 40:
+            execute player command "/staff"
+
+on inventory click:
+    if name of event-inventory is "&4&lStaff &f&lInfo":
+        cancel event
+        if clicked slot is 4:
+            execute player command "/Discord"
+        if clicked slot is 40:
+            execute player command "/staff"
+
+# ✅ KIT staff
+command /kitstaff:
+    trigger:
+        set {_kit} to "&f&lStaff"
+        
+        if {kit::%uuid of player%} is set:
+            if difference between {kit::%uuid of player%} and now < 1 minutes:
+                set {_tidtilbage} to difference between 1 minutes and (difference between {kit::%uuid of player%} and now)
+                send "&7[&dBoy&fKits&7] &cDu har allerede taget dette kit! Prøv igen om &e%{_tidtilbage}%&c."
+                stop
+
+        set {kit::%uuid of player%} to now
+        send "&7[&dBoy&fKits&7] &aDu har modtaget dit %{_kit}% &akit!"
+
+        give player 1 barrier named "&a&lStaff" with lore "&7Personligt kit til %player%."
+        give player 1 light named "&a&lStaff" with lore "&7Personligt kit til %player%."
+        give player 1 bone named "&a&lStaff" with lore "&7Personligt kit til %player%."
+        give player wooden axe named "&a&lStaff" with lore "&7Personligt kit til %player%."
