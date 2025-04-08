@@ -9,6 +9,8 @@
 
 > ✔ [Skript](https://www.spigotmc.org/resources/skript.114544/) - Anbefalet 
 
+> ✔ [LuckPerms](https://luckperms.net) - Anbefalet
+
 ### 📦 Staff Kits  
 > **/staffKits** - for at få kits
 
@@ -17,19 +19,16 @@
 - **`🚫 barrier`**  
 - **`💡 light`**  
 - **`🦴 bone`**  
-
 ### 📋 Staff Menu  
 > **/staff** - Åbner hovedmenuen  
 
 > **/staffinfo** - Viser staff-information  
 
 > **/staffOnline** - Viser online staff  
-
-#### 🔹 Staff Online Commands  
+### 🔹 Staff Online Commands  
 > **/staffOnline add <spiller>** - Tilføjer en spiller til staff-listen 
  
 > **/staffOnline remove <spiller>** - Fjerner en spiller fra staff-listen  
-
 ### 📥 Installation  
 1. Sørg for, at **Skript** er installeret.  
 2. Placer `staff.sk` i
